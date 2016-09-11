@@ -9,4 +9,7 @@ import ve.smile.payload.response.PayloadPlantillaEventoTareaResponse;
 @Consume("PlantillaEventoTareaService")
 public class PlantillaEventoTareaService extends IService<PayloadPlantillaEventoTareaResponse, PayloadPlantillaEventoTareaRequest, PlantillaEventoTarea> {
 
+	public PayloadPlantillaEventoTareaResponse consultarPorEvento(Integer idEvento) {
+		return doGet(getUrlService("consultarPorEvento")  + "/" + getIdSesion() + "/" + getAccessToken() + "/" + idEvento);
+	};
 }
