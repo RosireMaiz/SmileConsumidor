@@ -9,4 +9,7 @@ import ve.smile.payload.response.PayloadRequisitoAyudaResponse;
 @Consume("RequisitoAyudaService")
 public class RequisitoAyudaService extends IService<PayloadRequisitoAyudaResponse, PayloadRequisitoAyudaRequest, RequisitoAyuda> {
 
+	public PayloadRequisitoAyudaResponse consultarPorAyuda(Integer idAyuda) {
+		return doGet(getUrlService("consultarPorAyuda")  + "/" + getIdSesion() + "/" + getAccessToken() + "/" + idAyuda);
+	};
 }
