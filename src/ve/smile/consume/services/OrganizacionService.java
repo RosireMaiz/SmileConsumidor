@@ -9,4 +9,7 @@ import ve.smile.payload.response.PayloadOrganizacionResponse;
 @Consume("OrganizacionService")
 public class OrganizacionService extends IService<PayloadOrganizacionResponse, PayloadOrganizacionRequest, Organizacion> {
 
+	public PayloadOrganizacionResponse buscarOrganizacion() {
+		return doGet(getUrlService("buscarOrganizacion"));
+	}
 }

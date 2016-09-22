@@ -9,4 +9,7 @@ import ve.smile.payload.response.PayloadAyudaResponse;
 @Consume("AyudaService")
 public class AyudaService extends IService<PayloadAyudaResponse, PayloadAyudaRequest, Ayuda> {
 
+	public PayloadAyudaResponse consultarAllAyuda() {
+		return doGet(getUrlService("consultarAllAyuda"));
+	}
 }
