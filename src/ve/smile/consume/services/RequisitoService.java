@@ -7,6 +7,21 @@ import ve.smile.payload.request.PayloadRequisitoRequest;
 import ve.smile.payload.response.PayloadRequisitoResponse;
 
 @Consume("RequisitoService")
-public class RequisitoService extends IService<PayloadRequisitoResponse, PayloadRequisitoRequest, Requisito> {
+public class RequisitoService extends
+		IService<PayloadRequisitoResponse, PayloadRequisitoRequest, Requisito> {
+	
+	public PayloadRequisitoResponse consultarPorParticipacion(
+			Integer idParticipacion) {
+		return doGet(getUrlService(new StringBuilder()
+				.append("consultarPorParticipacion").append("/")
+				.append(getIdSesion()).append("/").append(getAccessToken())
+				.append("/").append(idParticipacion).toString()));
+	};
 
+	public PayloadRequisitoResponse consultarPorAyuda(Integer idAyuda) {
+		return doGet(getUrlService(new StringBuilder()
+				.append("consultarPorAyuda").append("/").append(getIdSesion())
+				.append("/").append(getAccessToken()).append("/")
+				.append(idAyuda).toString()));
+	};
 }

@@ -7,6 +7,14 @@ import ve.smile.payload.request.PayloadTareaRequest;
 import ve.smile.payload.response.PayloadTareaResponse;
 
 @Consume("TareaService")
-public class TareaService extends IService<PayloadTareaResponse, PayloadTareaRequest, Tarea> {
+public class TareaService extends
+		IService<PayloadTareaResponse, PayloadTareaRequest, Tarea> {
+
+	public PayloadTareaResponse consultarPorEvento(Integer idEvento) {
+		return doGet(getUrlService(new StringBuilder()
+				.append("consultarPorEvento").append("/").append(getIdSesion())
+				.append("/").append(getAccessToken()).append("/")
+				.append(idEvento).toString()));
+	};
 
 }

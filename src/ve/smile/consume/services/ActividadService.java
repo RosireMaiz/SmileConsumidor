@@ -7,6 +7,13 @@ import ve.smile.payload.request.PayloadActividadRequest;
 import ve.smile.payload.response.PayloadActividadResponse;
 
 @Consume("ActividadService")
-public class ActividadService extends IService<PayloadActividadResponse, PayloadActividadRequest, Actividad> {
-
+public class ActividadService extends
+		IService<PayloadActividadResponse, PayloadActividadRequest, Actividad> {
+	public PayloadActividadResponse consultarPorTrabajoSocial(
+			Integer idTrabajoSocial) {
+		return doGet(getUrlService(new StringBuilder()
+				.append("consultarPorTrabajoSocial").append("/")
+				.append(getIdSesion()).append("/").append(getAccessToken())
+				.append("/").append(idTrabajoSocial).toString()));
+	};
 }
