@@ -17,4 +17,11 @@ public class PreguntaService extends
 				.append(getIdSesion()).append("/").append(getAccessToken())
 				.append("/").append(idClasificadorPregunta).toString()));
 	};
+
+	public PayloadPreguntaResponse consultarPorClasificadorPreguntaSinSession(
+			Integer idClasificadorPregunta) {
+		return doGet(getUrlService(new StringBuilder()
+				.append("consultarPorClasificadorPregunta").append("/")
+				.append(idClasificadorPregunta).toString()));
+	};
 }
