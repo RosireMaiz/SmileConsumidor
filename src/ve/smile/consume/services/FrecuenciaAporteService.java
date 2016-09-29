@@ -8,5 +8,8 @@ import ve.smile.payload.response.PayloadFrecuenciaAporteResponse;
 
 @Consume("FrecuenciaAporteService")
 public class FrecuenciaAporteService extends IService<PayloadFrecuenciaAporteResponse, PayloadFrecuenciaAporteRequest, FrecuenciaAporte> {
-
+	
+	public PayloadFrecuenciaAporteResponse consultaFrecuenciaAporteSinSession() {
+		return doGet(getUrlService("consultaFrecuenciaAporteSinSession"));
+	}
 }

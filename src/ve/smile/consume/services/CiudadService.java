@@ -8,5 +8,7 @@ import ve.smile.payload.response.PayloadCiudadResponse;
 
 @Consume("CiudadService")
 public class CiudadService extends IService<PayloadCiudadResponse, PayloadCiudadRequest, Ciudad> {
-
+	public PayloadCiudadResponse consultaCiudadPorEstadoSinSession(Integer idEstado) {
+		return doGet(getUrlService("consultaCiudadPorEstadoSinSession") + "/" + idEstado);
+	}
 }
