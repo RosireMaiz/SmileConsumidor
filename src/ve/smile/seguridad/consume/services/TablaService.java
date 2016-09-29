@@ -14,4 +14,11 @@ public class TablaService extends IService<PayloadTablaResponse, PayloadTablaReq
 		return doPost(getUrlService("respaldarTablas"), listTablas,parametros);
 	}
 	
+	public PayloadTablaResponse consultarPorRespaldo(Integer idRespaldo) {
+		return doGet(getUrlService(new StringBuilder()
+				.append("consultarPorRespaldo").append("/").append(getIdSesion())
+				.append("/").append(getAccessToken()).append("/")
+				.append(idRespaldo).toString()));
+	};
+	
 }
