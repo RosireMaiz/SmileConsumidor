@@ -9,4 +9,7 @@ import ve.smile.payload.response.PayloadPadrinoResponse;
 @Consume("PadrinoService")
 public class PadrinoService extends IService<PayloadPadrinoResponse, PayloadPadrinoRequest, Padrino> {
 
+	public PayloadPadrinoResponse incluirPostuladoPadrino(Padrino padrino) {
+		return doPost(getUrlService("/incluirPostulacionPadrino"), padrino);
+	}
 }
