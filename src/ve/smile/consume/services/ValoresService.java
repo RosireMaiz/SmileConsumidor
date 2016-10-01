@@ -8,5 +8,8 @@ import ve.smile.payload.response.PayloadValoresResponse;
 
 @Consume("ValoresService")
 public class ValoresService extends IService<PayloadValoresResponse, PayloadValoresRequest, Valores> {
-
+	
+	public PayloadValoresResponse consultarAllValores() {
+		return doGet(getUrlService("consultarAllValores"));
+	}
 }
