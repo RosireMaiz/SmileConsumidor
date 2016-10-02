@@ -9,7 +9,7 @@ import ve.smile.payload.response.PayloadEstadoResponse;
 @Consume("EstadoService")
 public class EstadoService extends IService<PayloadEstadoResponse, PayloadEstadoRequest, Estado> {
 
-	public PayloadEstadoResponse consultaEstadoSinSession(Integer cantidad, Integer tipoCartelera) {
+	public PayloadEstadoResponse consultaEstadoSinSession() {
 		return doGet(getUrlService("consultaEstadoSinSession"));
 	}
 }
