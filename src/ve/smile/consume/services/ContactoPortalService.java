@@ -7,6 +7,13 @@ import ve.smile.payload.request.PayloadContactoPortalRequest;
 import ve.smile.payload.response.PayloadContactoPortalResponse;
 
 @Consume("ContactoPortalService")
-public class ContactoPortalService extends IService<PayloadContactoPortalResponse, PayloadContactoPortalRequest, ContactoPortal> {
+public class ContactoPortalService
+		extends
+		IService<PayloadContactoPortalResponse, PayloadContactoPortalRequest, ContactoPortal> {
+
+	public PayloadContactoPortalResponse incluirContactoPortal(
+			ContactoPortal contactoPortal) {
+		return doPost(getUrlService("/incluirContactoPortal"), contactoPortal);
+	}
 
 }

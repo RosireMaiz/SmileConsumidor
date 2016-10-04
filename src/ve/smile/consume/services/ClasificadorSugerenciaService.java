@@ -7,6 +7,12 @@ import ve.smile.payload.request.PayloadClasificadorSugerenciaRequest;
 import ve.smile.payload.response.PayloadClasificadorSugerenciaResponse;
 
 @Consume("ClasificadorSugerenciaService")
-public class ClasificadorSugerenciaService extends IService<PayloadClasificadorSugerenciaResponse, PayloadClasificadorSugerenciaRequest, ClasificadorSugerencia> {
+public class ClasificadorSugerenciaService
+		extends
+		IService<PayloadClasificadorSugerenciaResponse, PayloadClasificadorSugerenciaRequest, ClasificadorSugerencia> {
+
+	public PayloadClasificadorSugerenciaResponse consultaClasificadorSugerenciaSinSession() {
+		return doGet(getUrlService("consultaClasificadorSugerenciaSinSession"));
+	}
 
 }
