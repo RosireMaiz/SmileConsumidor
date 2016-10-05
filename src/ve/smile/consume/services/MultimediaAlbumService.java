@@ -8,5 +8,8 @@ import ve.smile.payload.response.PayloadMultimediaAlbumResponse;
 
 @Consume("MultimediaAlbumService")
 public class MultimediaAlbumService extends IService<PayloadMultimediaAlbumResponse, PayloadMultimediaAlbumRequest, MultimediaAlbum> {
-
+	
+	public PayloadMultimediaAlbumResponse consultarMultimediaAlbum(Integer cantidad, Integer album) {
+		return doGet(getUrlService("consultaMultimediaPorAlbum") + "/" + cantidad + "/" + album);
+	}
 }
