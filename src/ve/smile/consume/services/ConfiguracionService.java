@@ -9,4 +9,7 @@ import ve.smile.payload.response.PayloadConfiguracionResponse;
 @Consume("ConfiguracionService")
 public class ConfiguracionService extends IService<PayloadConfiguracionResponse, PayloadConfiguracionRequest, Configuracion> {
 
+	public PayloadConfiguracionResponse consultarConfiguracionPropiedad(Integer propiedad) {
+		return doGet(getUrlService("consultarConfiguracionPropiedad") + "/" + propiedad);
+	}
 }
