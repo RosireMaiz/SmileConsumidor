@@ -9,4 +9,7 @@ import ve.smile.payload.response.PayloadClasificadorPreguntaResponse;
 @Consume("ClasificadorPreguntaService")
 public class ClasificadorPreguntaService extends IService<PayloadClasificadorPreguntaResponse, PayloadClasificadorPreguntaRequest, ClasificadorPregunta> {
 
+	public PayloadClasificadorPreguntaResponse consultarClasificadorPregunta() {
+		return doGet(getUrlService("consultarClasificadorPregunta"));
+	}
 }

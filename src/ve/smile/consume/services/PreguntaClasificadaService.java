@@ -12,4 +12,8 @@ public class PreguntaClasificadaService extends IService<PayloadPreguntaClasific
 	public PayloadPreguntaClasificadaResponse consultarPorClasificador(Integer idClasificadorPregunta) {
 		return doGet(getUrlService("consultarPorClasificador")  + "/" + getIdSesion() + "/" + getAccessToken() + "/" + idClasificadorPregunta);
 	};
+	
+	public PayloadPreguntaClasificadaResponse consultarPreguntaClasificador(Integer clasificador) {
+		return doGet(getUrlService("consultarPreguntaClasificador") + "/" + clasificador);
+	};
 }
