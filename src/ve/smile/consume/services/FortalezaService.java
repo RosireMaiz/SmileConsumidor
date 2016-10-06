@@ -23,4 +23,20 @@ public class FortalezaService extends IService<PayloadFortalezaResponse, Payload
 				.append("consultarPorTrabajador").append("/")
 				.append(idTrabajador).toString()));
 	};
+	
+	// VOLUNTARIO
+	public PayloadFortalezaResponse consultarPorVoluntario(Integer idVoluntario)
+	{
+		return doGet(getUrlService(new StringBuilder()
+				.append("consultarPorVoluntario").append("/")
+				.append(getIdSesion()).append("/").append(getAccessToken())
+				.append("/").append(idVoluntario).toString()));
+	};
+
+	public PayloadFortalezaResponse consultarPorVoluntarioSinSession(Integer idVoluntario)
+	{
+		return doGet(getUrlService(new StringBuilder()
+				.append("consultarPorVoluntario").append("/")
+				.append(idVoluntario).toString()));
+	};
 }
