@@ -7,6 +7,15 @@ import ve.smile.payload.request.PayloadComentarioCarteleraRequest;
 import ve.smile.payload.response.PayloadComentarioCarteleraResponse;
 
 @Consume("ComentarioCarteleraService")
-public class ComentarioCarteleraService extends IService<PayloadComentarioCarteleraResponse, PayloadComentarioCarteleraRequest, ComentarioCartelera> {
+public class ComentarioCarteleraService
+		extends
+		IService<PayloadComentarioCarteleraResponse, PayloadComentarioCarteleraRequest, ComentarioCartelera> {
+
+
+	public PayloadComentarioCarteleraResponse incluirComentarioCartelera(
+			ComentarioCartelera comentarioCartelera) {
+		return doPost(getUrlService("/incluirComentarioCartelera"),
+				comentarioCartelera);
+	}
 
 }

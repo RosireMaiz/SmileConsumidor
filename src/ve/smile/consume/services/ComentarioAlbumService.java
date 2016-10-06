@@ -7,6 +7,14 @@ import ve.smile.payload.request.PayloadComentarioAlbumRequest;
 import ve.smile.payload.response.PayloadComentarioAlbumResponse;
 
 @Consume("ComentarioAlbumService")
-public class ComentarioAlbumService extends IService<PayloadComentarioAlbumResponse, PayloadComentarioAlbumRequest, ComentarioAlbum> {
+public class ComentarioAlbumService
+		extends
+		IService<PayloadComentarioAlbumResponse, PayloadComentarioAlbumRequest, ComentarioAlbum> {
+
+	public PayloadComentarioAlbumResponse incluirComentarioCartelera(
+			ComentarioAlbum comentarioAlbum) {
+		return doPost(getUrlService("/incluirComentarioAlbum"),
+				comentarioAlbum);
+	}
 
 }
