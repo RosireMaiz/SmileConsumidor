@@ -12,4 +12,10 @@ public class RequisitoParticipacionService extends IService<PayloadRequisitoPart
 	public PayloadRequisitoParticipacionResponse consultarPorParticipacion(Integer idParticipacion) {
 		return doGet(getUrlService("consultarPorParticipacion")  + "/" + getIdSesion() + "/" + getAccessToken() + "/" + idParticipacion);
 	};
+
+	public PayloadRequisitoParticipacionResponse consultarAllRequisitos() {
+		return doGet(getUrlService("consultarAllRequisitos")  );
+};
+
 }
+
