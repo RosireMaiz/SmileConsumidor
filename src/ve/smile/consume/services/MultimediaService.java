@@ -9,4 +9,7 @@ import ve.smile.payload.response.PayloadMultimediaResponse;
 @Consume("MultimediaService")
 public class MultimediaService extends IService<PayloadMultimediaResponse, PayloadMultimediaRequest, Multimedia> {
 
+	public PayloadMultimediaResponse consultarMultimediaTipo(Integer cantidad, Integer tipo) {
+		return doGet(getUrlService("consultarMultimediaTipo") + "/" + cantidad + "/" + tipo);
+	}
 }

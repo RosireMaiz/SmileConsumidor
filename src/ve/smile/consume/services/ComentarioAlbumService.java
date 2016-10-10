@@ -16,5 +16,10 @@ public class ComentarioAlbumService
 		return doPost(getUrlService("/incluirComentarioAlbum"),
 				comentarioAlbum);
 	}
+	
+	
+	public PayloadComentarioAlbumResponse consultaComentariosAlbum(Integer album, Integer estatusComentario) {
+		return doGet(getUrlService("consultaComentariosAlbum") + "/" + album + "/" + estatusComentario);
+	}
 
 }

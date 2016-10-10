@@ -9,4 +9,7 @@ import ve.smile.payload.response.PayloadTsPlanResponse;
 @Consume("TsPlanService")
 public class TsPlanService extends IService<PayloadTsPlanResponse, PayloadTsPlanRequest, TsPlan> {
 
+	public PayloadTsPlanResponse consultaTSPlanificadoAlbum(Integer album) {
+		return doGet(getUrlService("consultaTSPlanificadoAlbum") + "/" + album);
+	}
 }
