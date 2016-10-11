@@ -9,4 +9,7 @@ import ve.smile.payload.response.PayloadPatrocinadorResponse;
 @Consume("PatrocinadorService")
 public class PatrocinadorService extends IService<PayloadPatrocinadorResponse, PayloadPatrocinadorRequest, Patrocinador> {
 
+	public PayloadPatrocinadorResponse consultarAllPatrocinador() {
+		return doGet(getUrlService("consultarAllPatrocinador"));
+	}
 }
