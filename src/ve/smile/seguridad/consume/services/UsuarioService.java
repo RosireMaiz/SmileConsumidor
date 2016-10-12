@@ -22,4 +22,12 @@ public class UsuarioService extends IService<PayloadUsuarioResponse, PayloadUsua
 	public PayloadUsuarioResponse consultarPorRol(Integer idRol) {
 		return doGet(getUrlService("consultarPorRol")  + "/" + getIdSesion() + "/" + getAccessToken() + "/" + idRol);
 	};
+	
+	public PayloadUsuarioResponse loginAndroid(Usuario usuario, String ip) {
+		HashMap<String, Object> parametros = new HashMap<String, Object>();
+		
+		parametros.put("ip", ip);
+		
+		return doPost(getUrlService("loginAndroid"), usuario, true, parametros);
+	}
 }
