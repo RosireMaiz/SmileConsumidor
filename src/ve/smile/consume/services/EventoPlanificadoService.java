@@ -9,8 +9,8 @@ import ve.smile.payload.response.PayloadEventoPlanificadoResponse;
 @Consume("EventoPlanificadoService")
 public class EventoPlanificadoService extends IService<PayloadEventoPlanificadoResponse, PayloadEventoPlanificadoRequest, EventoPlanificado> {
 
-	public PayloadEventoPlanificadoResponse consultaEventoPlanificadoPublicable(Boolean publico, Integer estatusEvento) {
-		return doGet(getUrlService("consultaEventoPlanificadoPublicable") + "/" + publico + "/" + estatusEvento);
+	public PayloadEventoPlanificadoResponse consultaEventoPlanificadoPublicable(Boolean publico, Integer estatusEvento, Long fechaDesde, Integer cant) {
+		return doGet(getUrlService("consultaEventoPlanificadoPublicable") + "/" + publico + "/" + estatusEvento + "/" + fechaDesde + "/" + cant);
 	}
 	
 	public PayloadEventoPlanificadoResponse consultaEventoPlanificadoAlbum(Integer album) {
