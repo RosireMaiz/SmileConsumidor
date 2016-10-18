@@ -7,6 +7,15 @@ import ve.smile.payload.request.PayloadTrabajadorRequest;
 import ve.smile.payload.response.PayloadTrabajadorResponse;
 
 @Consume("TrabajadorService")
-public class TrabajadorService extends IService<PayloadTrabajadorResponse, PayloadTrabajadorRequest, Trabajador> {
+public class TrabajadorService
+		extends
+		IService<PayloadTrabajadorResponse, PayloadTrabajadorRequest, Trabajador> {
+	
+	public PayloadTrabajadorResponse consultaTrabajadoresParametrizado(
+			String sql) {
+		return doGet(getUrlService(new StringBuilder()
+				.append("consultaTrabajadoresParametrizado").append("/")
+				.append(sql).toString()));
+	};
 
 }
