@@ -7,22 +7,36 @@ import ve.smile.payload.request.PayloadProfesionRequest;
 import ve.smile.payload.response.PayloadProfesionResponse;
 
 @Consume("ProfesionService")
-public class ProfesionService extends IService<PayloadProfesionResponse, PayloadProfesionRequest, Profesion> {
-	
+public class ProfesionService extends
+		IService<PayloadProfesionResponse, PayloadProfesionRequest, Profesion> {
+
 	// VOLUNTARIO
-	public PayloadProfesionResponse consultarPorVoluntario(Integer idVoluntario)
-	{
+	public PayloadProfesionResponse consultarPorVoluntario(Integer idVoluntario) {
 		return doGet(getUrlService(new StringBuilder()
 				.append("consultarPorVoluntario").append("/")
 				.append(getIdSesion()).append("/").append(getAccessToken())
 				.append("/").append(idVoluntario).toString()));
 	};
 
-	public PayloadProfesionResponse consultarPorVoluntarioSinSession(Integer idVoluntario)
-	{
+	public PayloadProfesionResponse consultarPorVoluntarioSinSession(
+			Integer idVoluntario) {
 		return doGet(getUrlService(new StringBuilder()
 				.append("consultarPorVoluntario").append("/")
 				.append(idVoluntario).toString()));
 	};
 
+	// TRABAJADOR
+	public PayloadProfesionResponse consultarPorTrabajador(Integer idTrabajador) {
+		return doGet(getUrlService(new StringBuilder()
+				.append("consultarPorTrabajador").append("/")
+				.append(getIdSesion()).append("/").append(getAccessToken())
+				.append("/").append(idTrabajador).toString()));
+	};
+
+	public PayloadProfesionResponse consultarPorTrabajadorSinSession(
+			Integer idTrabajador) {
+		return doGet(getUrlService(new StringBuilder()
+				.append("consultarPorTrabajador").append("/")
+				.append(idTrabajador).toString()));
+	};
 }
