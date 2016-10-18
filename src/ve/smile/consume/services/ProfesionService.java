@@ -33,10 +33,4 @@ public class ProfesionService extends
 				.append("/").append(idTrabajador).toString()));
 	};
 
-	public PayloadProfesionResponse consultarPorTrabajadorSinSession(
-			Integer idTrabajador) {
-		return doGet(getUrlService(new StringBuilder()
-				.append("consultarPorTrabajador").append("/")
-				.append(idTrabajador).toString()));
-	};
 }
