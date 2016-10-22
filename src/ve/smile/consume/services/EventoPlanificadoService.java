@@ -16,4 +16,9 @@ public class EventoPlanificadoService extends IService<PayloadEventoPlanificadoR
 	public PayloadEventoPlanificadoResponse consultaEventoPlanificadoAlbum(Integer album) {
 		return doGet(getUrlService("consultaEventoPlanificadoAlbum") + "/" + album);
 	}
+	
+	public PayloadEventoPlanificadoResponse consultaEventosPlanificadosParametrizado(String sql)
+	{
+		return doGet(getUrlService(new StringBuilder().append("consultaEventosPlanificadosParametrizado").append("/").append(sql).toString()));
+	};
 }
