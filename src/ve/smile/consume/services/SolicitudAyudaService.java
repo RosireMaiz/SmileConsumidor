@@ -7,6 +7,15 @@ import ve.smile.payload.request.PayloadSolicitudAyudaRequest;
 import ve.smile.payload.response.PayloadSolicitudAyudaResponse;
 
 @Consume("SolicitudAyudaService")
-public class SolicitudAyudaService extends IService<PayloadSolicitudAyudaResponse, PayloadSolicitudAyudaRequest, SolicitudAyuda> {
+public class SolicitudAyudaService
+		extends
+		IService<PayloadSolicitudAyudaResponse, PayloadSolicitudAyudaRequest, SolicitudAyuda> {
+
+	public PayloadSolicitudAyudaResponse consultaSolicitudesParametrizado(
+			String sql) {
+		return doGet(getUrlService(new StringBuilder()
+				.append("consultaSolicitudesParametrizado").append("/")
+				.append(sql).toString()));
+	};
 
 }
