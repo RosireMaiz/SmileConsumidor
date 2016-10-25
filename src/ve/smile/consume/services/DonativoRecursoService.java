@@ -7,6 +7,14 @@ import ve.smile.payload.request.PayloadDonativoRecursoRequest;
 import ve.smile.payload.response.PayloadDonativoRecursoResponse;
 
 @Consume("DonativoRecursoService")
-public class DonativoRecursoService extends IService<PayloadDonativoRecursoResponse, PayloadDonativoRecursoRequest, DonativoRecurso> {
-
+public class DonativoRecursoService
+		extends
+		IService<PayloadDonativoRecursoResponse, PayloadDonativoRecursoRequest, DonativoRecurso> {
+	
+	public PayloadDonativoRecursoResponse consultaDonativosParametrizado(
+			String sql) {
+		return doGet(getUrlService(new StringBuilder()
+				.append("consultaDonativosParametrizado").append("/")
+				.append(sql).toString()));
+	}
 }
