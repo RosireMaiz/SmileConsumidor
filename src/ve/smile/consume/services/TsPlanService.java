@@ -12,4 +12,9 @@ public class TsPlanService extends IService<PayloadTsPlanResponse, PayloadTsPlan
 	public PayloadTsPlanResponse consultaTSPlanificadoAlbum(Integer album) {
 		return doGet(getUrlService("consultaTSPlanificadoAlbum") + "/" + album);
 	}
+	
+	public PayloadTsPlanResponse consultaTrabajoSocialPlanificadosParametrizado(String sql)
+	{
+		return doGet(getUrlService(new StringBuilder().append("consultaTrabajoSocialPlanificadosParametrizado").append("/").append(sql).toString()));
+	};
 }
