@@ -29,5 +29,25 @@ public class PersonaService extends
 				+ getPathToOrderBy(orderBy) + "/" + getIdSesion() + "/"
 				+ getAccessToken() + "/" + totalElementsByPage + "/" + page);
 	};
-	
+
+	public PayloadPersonaResponse consultarPersonaSinUsuarioMovilPaginacion(
+			Integer totalElementsByPage, Integer page, String orderBy) {
+		return doGet(getUrlService("/find/pagination/sinUsuarioMovil")
+				+ getPathToOrderBy(orderBy) + "/" + getIdSesion() + "/"
+				+ getAccessToken() + "/" + totalElementsByPage + "/" + page);
+	};
+
+	public PayloadPersonaResponse consultarPersonaConUsuarioMovilPaginacion(
+			Integer totalElementsByPage, Integer page, String orderBy) {
+		return doGet(getUrlService("/find/pagination/conUsuarioMovil")
+				+ getPathToOrderBy(orderBy) + "/" + getIdSesion() + "/"
+				+ getAccessToken() + "/" + totalElementsByPage + "/" + page);
+	};
+
+	public PayloadPersonaResponse consultarPersonaConUsuarioPaginacion(
+			Integer totalElementsByPage, Integer page, String orderBy) {
+		return doGet(getUrlService("/find/pagination/conUsuario")
+				+ getPathToOrderBy(orderBy) + "/" + getIdSesion() + "/"
+				+ getAccessToken() + "/" + totalElementsByPage + "/" + page);
+	};
 }
