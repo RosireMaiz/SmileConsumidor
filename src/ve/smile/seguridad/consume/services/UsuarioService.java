@@ -19,6 +19,12 @@ public class UsuarioService extends IService<PayloadUsuarioResponse, PayloadUsua
 		return doPost(getUrlService("login"), usuario, true, parametros);
 	}
 	
+	public PayloadUsuarioResponse recuperar(Usuario usuario) {
+		HashMap<String, Object> parametros = new HashMap<String, Object>();
+		
+		return doPost(getUrlService("recuperar"), usuario, true, parametros);
+	}
+	
 	public PayloadUsuarioResponse consultarPorRol(Integer idRol) {
 		return doGet(getUrlService("consultarPorRol")  + "/" + getIdSesion() + "/" + getAccessToken() + "/" + idRol);
 	};
